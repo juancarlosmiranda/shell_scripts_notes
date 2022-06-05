@@ -1,21 +1,26 @@
 # Bash/ Shel script notes
-This repository contains notes and examples related to programming with Bash and Shell script in Unix like systems.
-A list of useful commands to perform tasks from the console, something that can often get us out of trouble in different situations.
+
+This repository contains notes and examples related to programming with Bash and Shell script in Unix like systems. A
+list of useful commands to perform tasks from the console, something that can often get us out of trouble in different
+situations.
 
 # Contents
+
 1. Bash programming.
 2. Linux commands.
 3. Special tricks.
 
 # 1. Bash programming
 
-## Script header 
+## Script header
+
 | Sentence                   | Example            |
 |---------------------------|-------------------------|
 | Bash |  ``` #!/bin/bash ``` |
 | Sh |  ```  #!/bin/sh  ``` |
 
-## Variable definitions, print data 
+## Variable definitions, print data
+
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
 |  | Variable definition |  ``` MY_VARIABLE=1 ``` |
@@ -29,8 +34,8 @@ A list of useful commands to perform tasks from the console, something that can 
 | $0 |  Script name  | |
 | $1 |  First parameter received from from command line | |
 
-
 ## Comparisions
+
 ### Integer comparision
 
 | Operator  | Description | Example |
@@ -73,6 +78,7 @@ A list of useful commands to perform tasks from the console, something that can 
 # Flow control sentences
 
 ## If sentence
+
 ```
 file='example_if.sh'
 
@@ -89,6 +95,7 @@ fi
 ```
 
 ## While loop
+
 ```
 LAST_NUMBER=10
 COUNTER_INDEX=1
@@ -100,7 +107,9 @@ done
 ```
 
 ## For loop
+
 Iterate over filenames in directory
+
 ```
 for a_file in $( ls ); do
   echo $a_file
@@ -108,6 +117,7 @@ done
 ```
 
 ## Case statments
+
 ```
 case $my_number_option in
         1)
@@ -123,8 +133,6 @@ esac
 ```
 
 ## Functions (TODO)
-
-
 
 # 2. Linux commands
 
@@ -142,7 +150,8 @@ esac
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
 | pwd | Current directory | ```pwd```  |
-| du, sort, head | List files | List files and summarized and with blocks in Megas, sort numerically and in reverse to show the largest, select the first 20.  ```du -sm * &#124; sort -nr &#124; head -20```  |
+| du | List space used in human readeable format | ```du -h```  |
+| du, sort, head | List files | List files and summarized and with blocks in Megas, sort numerically and in reverse to show the largest, select the first 20.<br>  ```du -sm * &#124; sort -nr &#124; head -20```  |
 | find | Search files | Look for the string 'unit1' in the /etc directory and subdirectories in files of type f <br> ``` find /etc -depth -type f -exec grep -il unit1 {} \; ``` |
 | find | Search for files larger than 1000 Megabytes  | ``` find . -size +1000M ``` .|
 | find, grep | Search for a text string in all found files. | * ``` find . -name *.ext -exec grep "SEARCHED_STRING" '{}' \; -print > ~/OUTPUT_FILE ``` |
@@ -153,13 +162,13 @@ esac
 | rename | Rename files | Rename *.png.jpg a *.jpg ``` rename 's/\.png\.jpg$/\.jpg/' *.jpg ``` |
 
 ## Extract data, replace data
+
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
 | cut | Cut characters from text | ``` HOUR=`date &#124; cut -c17-18 &#124; tr -d ' '`; MINUTES=`date &#124; cut -c20-21 &#124; tr -d ' '`; SECONDS=`date &#124; cut -c23-24 &#124; tr -d ' '`;``` |
 | find | Replace a string in multiple files | Replace a string in multiple files. <br>  find *.php -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME  <br>  find . -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME/g |
 | sed | Replace a string in a file. | Another example, search for the string {PROXY_USER} (full string including braces) in the settings.xml file, the result is printed to another file called new_settings.xml <br> ``` sed -s 's/${PROXY_USER}/MYVALUE/g' file_to_search.txt > new_replaced_file.xml ``` |
 | sed | Replace a string in a file. | Another example, search for the string {PROXY_USER} (full string including braces) in the settings.xml file, the result is printed to another file called new_settings.xml <br> ``` sed -s 's/${PROXY_USER}/MYVALUE/g' file_to_search.txt > new_replaced_file.xml ``` |
-
 
 ## Check file integrity using md5sum and shasum
 
@@ -178,7 +187,6 @@ esac
 | iconv | Convert a file from latin1 to utf-8 | ``` iconv -f latin1 -t utf8 output_file > input_file ``` |
 | iconv | Convert a file from utf-8 to latin1 | ``` iconv -f utf8 -t latin1 input_file > output_file ``` |
 
-
 ## Disk drive management
 
 | Command  | Description | Example |
@@ -191,7 +199,7 @@ esac
 | dd | Burn .iso image to usb pendrive | ``` dd if=Fedora-Live-Security-x86_64-20-1.iso of=/dev/sdb bs=4M ``` |
 | mkfs.vfat | Format usb drive with vfat file system. | ``` mkfs.vfat -n /dev/sdd ```<br> ``` mkfs.vfat /dev/sdb -I -n "volume_name_MY_PENDRIVE" ``` |
 | mke2fs | Format drives as ext3 file system | ``` mke2fs -j /dev/hdaX ``` |
-|  | Create .iso from directory | There are two alternatives: "mkisofs" and "dd" <br> * ``` mkisofs -o /tmp/cd.iso /tmp/directory/ ``` <br> * ``` dd if=/dev/hdd of=fichero.iso ``` |
+| mkisofs, dd | Create .iso from directory | There are two alternatives: "mkisofs" and "dd" <br> * ``` mkisofs -o /tmp/cd.iso /tmp/directory/ ``` <br> * ``` dd if=/dev/hdd of=fichero.iso ``` |
 |  | See block units | ``` lsblk ``` |
 
 ## Networking (TODO)
@@ -219,6 +227,7 @@ esac
 | google-chrome | [Chrome] Run Chrome with proxy | ``` /usr/bin/google-chrome --user-data-dir=$HOME/YOUR_HISTORY_FOLDER/CHROME_VENV_DATA --proxy-server="proxy.YOUR_DOMAIN.COM:8080" ``` |
 
 ## Image and video management
+
 The imagemagick and ffmpeg tools are required.
 
 | Command  | Description | Example |
@@ -233,13 +242,11 @@ The imagemagick and ffmpeg tools are required.
 | mencoder | Convert video  | Convert a mpg video to avi (mencoder is part of Mplayer) <br> ``` mencoder INPUT_FILE.mpg -ovc lavc -lavcopts vcodec=mpeg4 -vf scale=640:480 -sws 2 -oac copy -o OUTPUT_FILE.avi ``` |
 | . | .  | . <br> ``` . ``` |
 
-
 # Special tricks
 
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
 | for; do; done | Read files from directory | ```  for a_file in $(ls); do echo $a_file; done ``` |
-
 
 # TODO - PENDING tasks
 
