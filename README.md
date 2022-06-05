@@ -150,12 +150,11 @@ esac
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
 | pwd | Current directory | ```pwd```  |
-| du | List space used in human readeable format | ```du -h```  |
+| du | List space used in human readable format | ```du -h```  |
 | du, sort, head | List files | List files and summarized and with blocks in Megas, sort numerically and in reverse to show the largest, select the first 20.<br>  ```du -sm * &#124; sort -nr &#124; head -20```  |
 | find | Search files | Look for the string 'unit1' in the /etc directory and subdirectories in files of type f <br> ``` find /etc -depth -type f -exec grep -il unit1 {} \; ``` |
 | find | Search for files larger than 1000 Megabytes  | ``` find . -size +1000M ``` .|
 | find, grep | Search for a text string in all found files. | * ``` find . -name *.ext -exec grep "SEARCHED_STRING" '{}' \; -print > ~/OUTPUT_FILE ``` |
-| find, xargs, sed | Replace a string in multiple files | Replace a string in multiple files. <br>  * ```find *.php -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME```  <br>  * ```find . -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME/g``` |
 | cat, sort | Sort files | Sorts the lines of all .txt files, eliminates duplicates and saves everything in result.txt <br> cat *.txt &#124; sort &#124; uniq > results.txt |
 | tar | Create tar archive with files after a date | ``` tar cvf backup.tar -N yyyy-mm-dd ``` |
 | tar | Create tgz file keeping absolute path | ``` tar cvfzP backup.tgz /path_to_folder/ ``` |
@@ -166,9 +165,9 @@ esac
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
 | cut | Cut characters from text | ``` HOUR=`date &#124; cut -c17-18 &#124; tr -d ' '`; MINUTES=`date &#124; cut -c20-21 &#124; tr -d ' '`; SECONDS=`date &#124; cut -c23-24 &#124; tr -d ' '`;``` |
-| find | Replace a string in multiple files | Replace a string in multiple files. <br>  find *.php -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME  <br>  find . -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME/g |
+| find | Replace a string in multiple files | Replace a string in multiple files. <br>  find *.php -type f \&#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME  <br>  find . -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME/g |
 | sed | Replace a string in a file. | Another example, search for the string {PROXY_USER} (full string including braces) in the settings.xml file, the result is printed to another file called new_settings.xml <br> ``` sed -s 's/${PROXY_USER}/MYVALUE/g' file_to_search.txt > new_replaced_file.xml ``` |
-| sed | Replace a string in a file. | Another example, search for the string {PROXY_USER} (full string including braces) in the settings.xml file, the result is printed to another file called new_settings.xml <br> ``` sed -s 's/${PROXY_USER}/MYVALUE/g' file_to_search.txt > new_replaced_file.xml ``` |
+| sed, find, xargs | Replace a string in multiple files | Replace a string in multiple files. <br>  * ```find *.php -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME```  <br>  * find . -type f &#124; xargs sed -i s/SEARCHED_NAME/REPLACED_NAME/g |
 
 ## Check file integrity using md5sum and shasum
 
