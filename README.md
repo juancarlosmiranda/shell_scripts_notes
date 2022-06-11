@@ -19,24 +19,49 @@ situations.
 | Bash |  ``` #!/bin/bash ``` |
 | Sh |  ```  #!/bin/sh  ``` |
 
-## Variable definitions, print data
+## Variable definitions, print and read data
 
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
-|  | Variable definition |  ``` MY_VARIABLE=1 ``` |
-| echo | Print data|  ``` echo $MY_VARIABLE ``` |
+|  | Variable definition |  ``` MY_VARIABLE=1; ``` |
+| read | Read input from keyboard|  ``` read $MY_VARIABLE; ``` |
+| echo | Print data|  ``` echo "Some text here -> "$MY_VARIABLE; ``` |
+
+```
+#!/bin/bash
+echo "---- SCRIPT INFORMATION ---";
+MY_VARIABLE=1;
+echo "Enter value ->; read $MY_VARIABLE;
+echo "Some text here -> "$MY_VARIABLE;
+```
 
 ## Script Parameters
 
 | Operator  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
-| $@ |  Array of parameters |  |
 | $0 |  Script name  | |
+| $$ |  PID number  | |
+| $@ |  Array of arguments |  |
+| $# |  Number of arguments received  | |
+| $* |  Arguments received  | |
 | $1 |  First parameter received from from command line | |
 
-## Comparisions
+```
+#!/bin/bash
+echo "---- SCRIPT INFORMATION ---";
+user_name=`whoami`
+echo "Username:"$user_name;
+echo "Script name: "$0;
+echo "PID number:" $$;
+echo "Array of parameters: "$@;
+echo "Number of parameters: "$#;
+echo "Arguments received:"$*;
+```
 
-### Integer comparision
+
+## Comparisons
+
+### Integer comparison
 
 | Operator  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
@@ -47,7 +72,7 @@ situations.
 | -eq |  \=\= Equal | |
 | -ne |  \!\= Not equal | |
 
-### String comparision (TODO)
+### String comparison (TODO)
 
 | Operator  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
@@ -80,8 +105,18 @@ situations.
 ## If sentence
 
 ```
-file='example_if.sh'
+...
+my_number_option=2
+if [ $my_number_option = 1 ]
+then
+	echo "True number!!";
+else
+	echo "Else number!!";
+fi
 
+...
+
+file='example_if.sh'
 if [ -f $file ]
 then
         echo "is a file"
@@ -116,7 +151,7 @@ for a_file in $( ls ); do
 done
 ```
 
-## Case statments
+## Case statements
 
 ```
 case $my_number_option in
@@ -142,6 +177,13 @@ esac
 |---------------------------|---------------------------|-------------------------|
 | history | Clean command history | ``` history -c ``` |
 | . | Command execution | ``` RESULT_FROM=`/usr/bin/pwd`; ``` |
+
+## User account (TODO)
+| Command  | Description | Example |
+|---------------------------|---------------------------|-------------------------|
+| who | Who is connected | ```who```  |
+| whoami | What is my account | ```whoami```  |
+
 
 ## Output redirection (TODO)
 
