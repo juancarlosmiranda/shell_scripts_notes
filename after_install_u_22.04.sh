@@ -36,6 +36,7 @@ sudo apt install -y libffi-dev
 sudo apt install gcc
 
 # Python environments
-sudo apt install -y python3-dev
-sudo apt install -y python3-pip
-sudo apt-get install python-tk
+sudo apt-get install -y python3-dev
+sudo apt-get install -y python3-pip
+sudo apt-get install -y python-tk
+sudo apt-get install -y python3.8-venv

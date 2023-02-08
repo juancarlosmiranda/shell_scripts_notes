@@ -10,12 +10,12 @@ Load with menu
 ## 1. After install in Linux systems
 In Linux systems you can install packages using Bash scripts, tested in Ubuntu 20.04. A super fast script for impatient people, copy and paste it!!!
 
-### 1.1 Ubuntu 18.04
+### 1.1 Ubuntu 18.04 (TO COMPLETE)
 
 
-### 1.2 Ubuntu 20.04
+### 1.2 Ubuntu 20.04 (TO COMPLETE)
 
-### 1.3 Ubuntu 22.04
+### 1.3 Ubuntu 22.04 (TO COMPLETE)
 
 Remove old packages and make cleaning of the system. 
 ```
@@ -45,9 +45,7 @@ sudo apt-get install -y ffmpeg
 sudo apt-get install -y dialog
 ```
 
-
 Install essential tools that are not part of package.
-
 ```
 sudo apt-get install -y build-essential
 sudo apt-get install -y cmake
@@ -56,7 +54,6 @@ sudo apt-get install -y libusb-1.0
 sudo apt install -y libssl-dev 
 sudo apt install -y libffi-dev
 ```
-
 
 
 ## Python environments
@@ -77,17 +74,16 @@ python3 -m venv ./server_rest_api-venv
 source ./server_rest_api-venv/bin/activate
 pip install --upgrade pip
 ```
+
 Install requirements.
 ```
 pip install -r requirements_linux.txt
 ```
 
-
 Save requirements.
 ```
 pip freeze > requirements_my.txt
 ```
-
 
 For Windows systems follow these steps from command line CMD
 ```
@@ -96,8 +92,10 @@ pip install --upgrade pip
 pip install -r requirements_win.txt
 ```
 
-to delete sources lists
+clean old repositories to delete sources lists
+```
 /etc/apt/sources.list.d
+```
 
 
 ## Authorship
@@ -105,4 +103,4 @@ Please contact author to report bugs juancarlos.miranda@udl.cat
 
 ## Citation
 If you find this code useful, please consider citing:
-[https://github.com/juancarlosmiranda/azure_kinect_notes](https://github.com/juancarlosmiranda/azure_kinect_notes).
+[https://github.com/juancarlosmiranda/shell_scripts_notes/](https://github.com/juancarlosmiranda/shell_scripts_notes/).
