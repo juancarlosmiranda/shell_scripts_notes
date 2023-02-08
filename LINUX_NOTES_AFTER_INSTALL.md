@@ -22,6 +22,8 @@ Remove old packages and make cleaning of the system.
 sudo apt-get update
 sudo apt-get autoremove
 sudo apt-get autoclean
+
+sudo ubuntu-drivers autoinstall
 ```
 
 Install network tools (08/02/2023)
@@ -30,9 +32,9 @@ sudo apt-get install -y net-tools
 sudo apt-get install -y openssh-server
 sudo systemctl enable ssh --now
 sudo systemctl start ssh
-sudo apt-get install wireshark-qt
-sudo apt-get install -y hping3
-sudo apt-get install -y fping
+#sudo apt-get install wireshark-qt
+#sudo apt-get install -y hping3
+#sudo apt-get install -y fping
 ```
 
 Install common apps

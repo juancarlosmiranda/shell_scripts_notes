@@ -12,9 +12,9 @@ sudo apt-get install net-tools
 sudo apt-get install openssh-server
 sudo systemctl enable ssh --now
 sudo systemctl start ssh
-sudo apt-get install -y wireshark-qt
-sudo apt-get install -y hping3
-sudo apt-get install -y fping
+#sudo apt-get install -y wireshark-qt
+#sudo apt-get install -y hping3
+#sudo apt-get install -y fping
 
 # Install common apps
 sudo apt-get install mlocate
