@@ -142,7 +142,7 @@ device_selected = torch.device('cuda') if torch.cuda.is_available() else torch.d
 
 
 ## Authorship
-Please contact author to report bugs juancarlos.miranda@udl.cat
+..
 
 ## Citation
 If you find this code useful, please consider citing:
