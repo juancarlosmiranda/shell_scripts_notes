@@ -6,6 +6,7 @@ set -e
 sudo apt-get update
 sudo apt-get autoremove
 sudo apt-get autoclean
+sudo ubuntu-drivers autoinstall
 
 # Install network tools (08/02/20239)
 sudo apt-get install net-tools

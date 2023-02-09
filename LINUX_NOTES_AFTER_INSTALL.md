@@ -99,6 +99,8 @@ clean old repositories to delete sources lists
 /etc/apt/sources.list.d
 ```
 
+sudo apt install nvidia-cuda-toolkit
+
 
 ## Authorship
 Please contact author to report bugs juancarlos.miranda@udl.cat
