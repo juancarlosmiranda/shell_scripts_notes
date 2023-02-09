@@ -61,14 +61,14 @@ sudo apt install -y libffi-dev
 sudo apt install -y gcc
 
 ## Python environments
+
+Install Python
 ```
 sudo apt-get install -y python3-dev
 sudo apt-get install -y python3.8-venv
 sudo apt-get install -y python3-pip
 sudo apt-get install -y python-tk
 ```
-
-In Linux systems execute as follows:
 
 Create and activate environment.
 ```
@@ -82,7 +82,7 @@ Install requirements.
 pip install -r requirements_linux.txt
 ```
 
-Save requirements.
+Save requirements with pip freeze.
 ```
 pip freeze > requirements_my.txt
 ```
@@ -94,7 +94,7 @@ pip install --upgrade pip
 pip install -r requirements_win.txt
 ```
 
-clean old repositories to delete sources lists
+Clean old repositories to delete sources lists
 ```
 /etc/apt/sources.list.d
 ```
@@ -120,14 +120,10 @@ sudo sh cuda_11.7.0_515.43.04_linux.run
 ```
 
 
-
-
-
 ### Conflicts with CUDA installation
 https://askubuntu.com/questions/1392998/cuda-installation-uncomprehensible-conflicts
 https://forums.developer.nvidia.com/t/cuda-installation-problem-for-nvidia-a40-linux-x86-64-ubuntu-20-04/219149
 https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-20-04-focal-fossa-linux
-
 
 
 ### CUDA toolkit
