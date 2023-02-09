@@ -55,6 +55,8 @@ sudo apt install -y libssl-dev
 sudo apt install -y libffi-dev
 ```
 
+## Development environments
+
 ## C/C++ development
 sudo apt install -y gcc
 
@@ -65,9 +67,6 @@ sudo apt-get install -y python3.8-venv
 sudo apt-get install -y python3-pip
 sudo apt-get install -y python-tk
 ```
-
---python3 -m pip install python-venv--
---pip3 install python-venv--
 
 In Linux systems execute as follows:
 
@@ -100,7 +99,50 @@ clean old repositories to delete sources lists
 /etc/apt/sources.list.d
 ```
 
+## CUDA support
+Deleting any NVIDIA/CUDA packages you may already have installed
+```
+sudo apt remove --autoremove nvidia-cuda-toolkit
+sudo apt remove --autoremove nvidia-*
+sudo apt-get purge nvidia*
+sudo rm /etc/apt/sources.list.d/cuda*
+sudo rm -rf /usr/local/cuda*
+```
+
+Link to download NVIDIA CUDA drivers [here](https://developer.nvidia.com/cuda-11-7-0-download-archive)
+Linux -- Ubuntu -- 20.04
+```
+mkdir cuda_driver
+cd cuda_driver
+sudo apt-get install nvidia-driver-515
+wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
+sudo sh cuda_11.7.0_515.43.04_linux.run
+```
+
+
+
+
+
+### Conflicts with CUDA installation
+https://askubuntu.com/questions/1392998/cuda-installation-uncomprehensible-conflicts
+https://forums.developer.nvidia.com/t/cuda-installation-problem-for-nvidia-a40-linux-x86-64-ubuntu-20-04/219149
+https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-20-04-focal-fossa-linux
+
+
+
+### CUDA toolkit
 sudo apt install nvidia-cuda-toolkit
+
+| Command  | Description | Example |
+|---------------------------|---------------------------|-------------------------|
+| nvidia-smi | .  | ```nvidia-smi ``` |
+| nvcc |   | ``` nvcc --version ``` |
+
+Checking in Python the use of GPU
+```
+import torch
+device_selected = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+```
 
 
 ## Authorship
