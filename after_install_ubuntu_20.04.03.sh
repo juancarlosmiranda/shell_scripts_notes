@@ -38,7 +38,7 @@ sudo apt install -y gcc
 
 # Python environments
 sudo apt-get install -y python3-dev
-sudo apt-get install -y python3.8-venv
+sudo apt-get install -y python3-venv
 sudo apt-get install -y python3-pip
 sudo apt-get install -y python-tk
 
