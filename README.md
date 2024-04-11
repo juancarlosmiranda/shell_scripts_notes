@@ -24,7 +24,7 @@ situations.
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
 |  | Variable definition |  ``` MY_VARIABLE=1; ``` |
-| read | Read input from keyboard|  ``` read $MY_VARIABLE; ``` |
+| read | Read input from keyboard|  ``` read MY_VARIABLE; ``` |
 | echo | Print data|  ``` echo "Some text here -> "$MY_VARIABLE; ``` |
 
 ```
@@ -76,12 +76,13 @@ echo "Arguments received:"$*;
 
 | Operator  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
+| -eq |  \=\= Equal | |
+| -ne |  \!\= Not equal | |
 | -gt |  \> Great than | |
 | -lt |  \< Less than | |
 | -ge |  \>\= Great or equal | |
 | -lt |  \<\= Less or equal | |
-| -eq |  \=\= Equal | |
-| -ne |  \!\= Not equal | |
+
 
 ## Boolean operators
 
@@ -176,7 +177,8 @@ esac
 | Command  | Description | Example |
 |---------------------------|---------------------------|-------------------------|
 | history | Clean command history | ``` history -c ``` |
-| . | Command execution | ``` RESULT_FROM=`/usr/bin/pwd`; ``` |
+| . | Command execution | ``` RESULT_FROM=$(/usr/bin/pwd); ``` |
+| . | Command execution (deprecated) | ``` RESULT_FROM=`/usr/bin/pwd`; ``` |
 
 ## User account (TODO)
 | Command  | Description | Example |
@@ -289,6 +291,13 @@ The imagemagick and ffmpeg tools are required.
 |---------------------------|---------------------------|-------------------------|
 | for; do; done | Read files from directory | ```  for a_file in $(ls); do echo $a_file; done ``` |
 
+# Display settings
+
+| Command  | Description | Example |
+|---------------------------|---------------------------|-------------------------|
+| xdpyinfo | Check out the resolution provided | ``` xdpyinfo \\ grep dim ``` |
+
+
 # TODO - PENDING tasks
 
 | Command  | Description | Example |
@@ -297,3 +306,4 @@ The imagemagick and ffmpeg tools are required.
 | . | . | ``` . ``` |
 | . | . | ``` . ``` |
 | . | . | ``` . ``` |
+
