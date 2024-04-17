@@ -79,10 +79,10 @@ situations.
 | mount | Mount | ``` mount -t iso9662 /dev/sdb1 /mnt/sdb1 ``` |
 | mount | Mount .iso file as directory | * ``` mount file.iso /mnt/my_directory/ -t iso9660 -o ro,loop=/dev/loop0 ``` <br> * ``` mount -o loop dvd1.iso /mnt/isodisk ```|
 | umount | Unmount units | ``` umount /run/media/user/pendrive ``` |
-| dd | Burn .iso image to usb pendrive | ``` dd if=Fedora-Live-Security-x86_64-20-1.iso of=/dev/sdb bs=4M ``` |
+| dd | Burn .iso image to usb pendrive | ``` dd if=Fedora-Live-Security-x86_64-20-1.iso of=/dev/sdb bs=4M status=progress``` |
 | mkfs.vfat | Format usb drive with vfat file system. | ``` mkfs.vfat -n /dev/sdd ```<br> ``` mkfs.vfat /dev/sdb -I -n "volume_name_MY_PENDRIVE" ``` |
 | mke2fs | Format drives as ext3 file system | ``` mke2fs -j /dev/hdaX ``` |
-| mkisofs, dd | Create .iso from directory | There are two alternatives: "mkisofs" and "dd" <br> * ``` mkisofs -o /tmp/cd.iso /tmp/directory/ ``` <br> * ``` dd if=/dev/hdd of=fichero.iso ``` |
+| mkisofs, dd | Create .iso from directory | There are two alternatives: "mkisofs" and "dd" <br> * ``` mkisofs -o /tmp/cd.iso /tmp/directory/ ``` <br> * ``` dd if=/dev/hdd of=fichero.iso status=progress``` |
 |  | See block units | ``` lsblk ``` |
 
 ## Networking (TODO)
