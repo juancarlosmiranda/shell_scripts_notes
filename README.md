@@ -126,7 +126,7 @@ The imagemagick and ffmpeg tools are required.
 | . | .  | . <br> ``` . ``` |
 
 
-# 1. Bash programming
+# 3. Bash programming
 
 ## Script header
 
